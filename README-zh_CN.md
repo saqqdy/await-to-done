@@ -6,7 +6,6 @@ Async await 封装器可轻松处理错误
 
 [![NPM version][npm-image]][npm-url]
 [![Codacy Badge][codacy-image]][codacy-url]
-[![tree shaking][tree-shaking-image]][tree-shaking-url]
 ![typescript][typescript-url]
 [![Test coverage][codecov-image]][codecov-url]
 [![npm download][download-image]][download-url]
@@ -77,8 +76,6 @@ Please open an issue [here](https://github.com/saqqdy/await-to-done/issues).
 [npm-url]: https://npmjs.org/package/await-to-done
 [codacy-image]: https://app.codacy.com/project/badge/Grade/f70d4880e4ad4f40aa970eb9ee9d0696
 [codacy-url]: https://www.codacy.com/gh/saqqdy/await-to-done/dashboard?utm_source=github.com&utm_medium=referral&utm_content=saqqdy/await-to-done&utm_campaign=Badge_Grade
-[tree-shaking-image]: https://badgen.net/bundlephobia/tree-shaking/await-to-done
-[tree-shaking-url]: https://bundlephobia.com/package/await-to-done
 [typescript-url]: https://badgen.net/badge/icon/typescript?icon=typescript&label
 [codecov-image]: https://img.shields.io/codecov/c/github/saqqdy/await-to-done.svg?style=flat-square
 [codecov-url]: https://codecov.io/github/saqqdy/await-to-done?branch=master
