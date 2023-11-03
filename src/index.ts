@@ -9,13 +9,15 @@ import { isArray } from 'js-cool'
  * @param promises - Promise rest params
  * @return - [Error, undefined] | [null, data | data[]]
  */
-function awaitTo<T, E = Error>(promise: Promise<T>): Promise<[E, undefined] | [null, T]>
-function awaitTo<T, E = Error>(promise: Array<Promise<T>>): Promise<[E, undefined] | [null, T[]]>
-function awaitTo<T, E = Error>(
+function awaitToDone<T, E = Error>(promise: Promise<T>): Promise<[E, undefined] | [null, T]>
+function awaitToDone<T, E = Error>(
+	promise: Array<Promise<T>>
+): Promise<[E, undefined] | [null, T[]]>
+function awaitToDone<T, E = Error>(
 	promise: Promise<T>,
 	...promises: Array<Promise<T>>
 ): Promise<[E, undefined] | [null, T[]]>
-function awaitTo<T, E = Error>(
+function awaitToDone<T, E = Error>(
 	promise: Promise<T> | Array<Promise<T>>,
 	...promises: Array<Promise<T>>
 ): Promise<[E, undefined] | [null, T | T[]]> {
@@ -29,4 +31,4 @@ function awaitTo<T, E = Error>(
 		.catch<[E, undefined]>((err: E) => [err, undefined])
 }
 
-export default awaitTo
+export default awaitToDone
