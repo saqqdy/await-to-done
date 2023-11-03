@@ -4,8 +4,6 @@
 
 Async await wrapper for easy error handling
 
-When multiple requests are made to the same interface in a short period of time, await-to-done can be useful if you need to ensure that the request executed first returns the results first
-
 [![NPM version][npm-image]][npm-url]
 [![Codacy Badge][codacy-image]][codacy-url]
 ![typescript][typescript-url]
@@ -26,18 +24,6 @@ When multiple requests are made to the same interface in a short period of time,
 
 </div>
 
-- [Installation](#installation)
-- [Usage](#usage)
-  - [Add serializer feature to axios](#add-serializer-feature-to-axios)
-  - [or axios instance](#or-axios-instance)
-- [API Reference](#api-reference)
-  - [awaitToDone](#awaittodone)
-  - [awaitToDone.clear](#awaittodoneclear)
-  - [awaitToDone.series](#awaittodoneseries)
-- [Using unpkg CDN](#using-unpkg-cdn)
-- [Support & Issues](#support--issues)
-- [License](#license)
-
 ## Installing
 
 ```bash
@@ -50,44 +36,31 @@ $ npm install await-to-done --save
 
 ## Usage
 
-### Add serializer feature to axios
+### ES6 module
 
 ```js
-import axios from 'axios'
-import wrapper from 'await-to-done'
+import to from 'await-to-done'
 
-const awaitToDone = wrapper(axios, {
-  // unique: false,
-  // orderly: true
-})
-
-export default awaitToDone
+const [err, data] = await to(/* promise function */)
 ```
 
-### or axios instance
+### Node.js require
 
 ```js
-import axios from 'axios'
-import wrapper from 'await-to-done'
+const to = require('await-to-done')
 
-const instance = axios.create({
-  withCredentials: true
-})
-const awaitToDone = wrapper(instance, {
-  // unique: false,
-  // orderly: true
-})
-
-export default awaitToDone
+const [err, data] = await to(/* promise function */)
 ```
 
 ### Using unpkg CDN
 
 ```html
-<script src="https://unpkg.com/browse/axios@1.4.0/dist/axios.min.js"></script>
-<script src="https://unpkg.com/await-to-done@1.0.0/dist/index.global.prod.js"></script>
+<script src="https://unpkg.com/await-to-done@latest/dist/index.global.prod.js"></script>
 <script>
-  const http = awaitToDone(axios)
+  ;(async () => {
+    const to = window.awaitToDone
+    const [err, data] = await to(/* promise function */)
+  })()
 </script>
 ```
 

@@ -2,7 +2,7 @@
 
 # await-to-done
 
-一个扩展 axios 按顺序返回的工具，当向同一个接口短时间内发起多次请求时，如果需要确保先执行的请求先返回结果，await-to-done 会很有用
+Async await 封装器可轻松处理错误
 
 [![NPM version][npm-image]][npm-url]
 [![Codacy Badge][codacy-image]][codacy-url]
@@ -37,44 +37,31 @@ $ npm install await-to-done --save
 
 ## 使用
 
-### 为 axios 赋上 serializer 功能
+### ES6 模块方式引入
 
 ```js
-import axios from 'axios'
-import wrapper from 'await-to-done'
+import to from 'await-to-done'
 
-const awaitToDone = wrapper(axios, {
-  // unique: false,
-  // orderly: true
-})
-
-export default awaitToDone
+const [err, data] = await to(/* promise function */)
 ```
 
-### 或者把 serializer 功能赋在 axios 实例上
+### Node.js require
 
 ```js
-import axios from 'axios'
-import wrapper from 'await-to-done'
+const to = require('await-to-done')
 
-const instance = axios.create({
-  withCredentials: true
-})
-const awaitToDone = wrapper(instance, {
-  // unique: false,
-  // orderly: true
-})
-
-export default awaitToDone
+const [err, data] = await to(/* promise function */)
 ```
 
 ### 使用 unpkg CDN
 
 ```html
-<script src="https://unpkg.com/browse/axios@1.4.0/dist/axios.min.js"></script>
-<script src="https://unpkg.com/await-to-done@1.0.0/dist/index.global.prod.js"></script>
+<script src="https://unpkg.com/await-to-done@latest/dist/index.global.prod.js"></script>
 <script>
-  const http = awaitToDone(axios)
+  ;(async () => {
+    const to = window.awaitToDone
+    const [err, data] = await to(/* promise function */)
+  })()
 </script>
 ```
 
