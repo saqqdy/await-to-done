@@ -103,9 +103,9 @@
 	},
 	"keywords": [
 		"promise",
-		"plugin",
+		"await-to-js",
 		"await-to",
-		"serializer",
+		"await-error",
 		"await-to-done",
 		"await-done",
 		"saqqdy"
