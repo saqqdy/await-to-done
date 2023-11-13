@@ -1,5 +1,3 @@
-import { isArray } from 'js-cool'
-
 /**
  * Async await wrapper for easy error handling
  *
@@ -21,7 +19,7 @@ function awaitToDone<T, E = Error>(
 	promise: Promise<T> | Array<Promise<T>>,
 	...promises: Array<Promise<T>>
 ): Promise<[E, undefined] | [null, T | T[]]> {
-	if (!isArray(promise) && promises.length === 0) {
+	if (!Array.isArray(promise) && promises.length === 0) {
 		return promise
 			.then<[null, T]>((data: T) => [null, data])
 			.catch<[E, undefined]>((err: E) => [err, undefined])

@@ -5,9 +5,6 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
-  js-cool:
-    specifier: ^5.14.1
-    version: 5.14.1
   tslib:
     specifier: ^2.6.2
     version: 2.6.2
@@ -2037,6 +2034,7 @@ packages:
   /@node-kit/extra.cp@3.2.0:
     resolution: {integrity: sha512-8n27oOF0clO0VsqkhSo0PXTOG9YGYS25f8zsf9JKsMaT9IkZjPNCzgcNDQkIOE/e3r1u7c5j6ab6siWOON0keQ==}
     hasBin: true
+    dev: true
 
   /@node-kit/extra.fs@2.5.1:
     resolution: {integrity: sha512-cj0gMQ+yE4jNmCrtz1TEXYMX+zNOJEGxGy1YzG2IBek0ndKszIYRxyLbIz3URh1MSTMGT+f9Zxy3iARB8vVP9g==}
@@ -5252,6 +5250,7 @@ packages:
   /invert-kv@3.0.1:
     resolution: {integrity: sha512-CYdFeFexxhv/Bcny+Q0BfOV+ltRlJcd4BBZBYFX/O0u4npJrgZtIcjokegtiSMAvlMTJ+Koq0GBCc//3bueQxw==}
     engines: {node: '>=8'}
+    dev: true
 
   /ip@2.0.0:
     resolution: {integrity: sha512-WKa+XuLG1A1R0UWhl2+1XQSi+fZWMsYKffMZTTYsiZaUD8k2yDAj5atimTUD2TZkyCkNEeYE5NhFZmupOGtjYQ==}
@@ -5986,6 +5985,7 @@ packages:
       os-lang: 3.2.0
       tslib: 2.6.2
       use-downloads: 1.5.0
+    dev: true
 
   /js-tokens@4.0.0:
     resolution: {integrity: sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ==}
@@ -6121,6 +6121,7 @@ packages:
     engines: {node: '>=14.16'}
     dependencies:
       invert-kv: 3.0.1
+    dev: true
 
   /lcov-parse@1.0.0:
     resolution: {integrity: sha512-aprLII/vPzuQvYZnDRU78Fns9I2Ag3gi4Ipga/hxnVMCZC8DnR2nI7XBqrPoywGfxqIx/DgarGvDJZAD3YBTgQ==}
@@ -6161,6 +6162,7 @@ packages:
       mount-image: 1.2.0
       mount-script: 1.2.0
       mount-style: 1.2.0
+    dev: true
 
   /load-yml@1.4.0:
     resolution: {integrity: sha512-L0O2nUOOZ2bNMvFudewMPDhdJqtNoxEHUUhy0Z22aEZXSzmvR1UK5utu67uTpmwmFo+UrdycWceGuifcsgJi5w==}
@@ -6529,15 +6531,19 @@ packages:
 
   /mount-css@1.2.0:
     resolution: {integrity: sha512-LGm7ucjo+3NsXQqxHH03v9jmAs00/JR1CsqO6IC9gm7zkZjWjki5FLM+Ld9MeTfuPPXXgMj7m1yzz5NA13Ye1g==}
+    dev: true
 
   /mount-image@1.2.0:
     resolution: {integrity: sha512-NQsmg+Zjnb4DZNvJtwuFbN3ekS+tJxyfbYuTk9PqdmtRpHv0RjajEnzCRXNUIZ7Epbe3iTHhRFJI/zHClmirQA==}
+    dev: true
 
   /mount-script@1.2.0:
     resolution: {integrity: sha512-Zi41a5RITaRU0Uzkgih/yzUfsxWDFLjM8ap37Jjic1jH2ob7N5yOzsj6zhSJxc3JC84456kgLFd5SLdYob2eJQ==}
+    dev: true
 
   /mount-style@1.2.0:
     resolution: {integrity: sha512-INP8yaVjMy6kl2fbM43UrGWxqCZIKMO35pNW9nL0EiS7jNYbZkXghf7Nt+ls2VyqOZlEONo6h4WtnxNS41By6A==}
+    dev: true
 
   /ms@2.1.2:
     resolution: {integrity: sha512-sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk/RyaKWP0PTKyWtmLSM0b+adUTEvbs1PEaH2w==}
@@ -6862,6 +6868,7 @@ packages:
     dependencies:
       '@node-kit/extra.cp': 3.2.0
       lcid: 4.0.1
+    dev: true
 
   /p-limit@2.3.0:
     resolution: {integrity: sha512-//88mFWSJx8lxCzwdAABTJL2MyWB12+eIY7MDL2SqLmAkeKU9qxRvWuSyTjm3FUmpBEMuFfckAIqEaVGUDxb6w==}
@@ -8299,6 +8306,7 @@ packages:
 
   /use-downloads@1.5.0:
     resolution: {integrity: sha512-6tGTUgEtOnlaUwokV+DVLyScyllUJ2qjXd7KKDfHtJkx+vcYUnEzjguO2C/GNekNZFPDkn2RfRn3cFCR+ViciQ==}
+    dev: true
 
   /util-deprecate@1.0.2:
     resolution: {integrity: sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==}
