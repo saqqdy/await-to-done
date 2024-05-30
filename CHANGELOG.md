@@ -1,5 +1,10 @@
 # Change logs
 
+## 2024.05.30 v1.1.1
+
+1. docs work
+2. use pnpm v9
+
 ## 2024.05.30 v1.1.0
 
 1. fix types

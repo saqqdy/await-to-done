@@ -36,20 +36,35 @@ $ npm install await-to-done --save
 
 ## Usage
 
-### ES6 module
+### Simple Usage
 
-```js
+1. ES6 module
+
+```ts
 import to from 'await-to-done'
 
 const [err, data] = await to(/* promise function */)
 ```
 
-### Node.js require
+2. Node.js require
 
-```js
+```ts
 const to = require('await-to-done')
 
 const [err, data] = await to(/* promise function */)
+```
+
+### Multiple Promises
+
+```ts
+import to from 'await-to-done'
+
+const bar = () => new Promise<boolean>()
+const foo = () => new Promise<string>()
+
+const [err, data] = await to(bar(), foo()) // data = [boolean, string]
+// or pass in an Array
+const [err, data] = await to([bar(), foo()]) // data = [boolean, string]
 ```
 
 ### Using unpkg CDN
