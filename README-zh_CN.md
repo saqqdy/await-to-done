@@ -36,7 +36,9 @@ $ npm install await-to-done --save
 
 ## 使用
 
-### ES6 模块方式引入
+### 简单用法
+
+1. ES6 模块方式引入
 
 ```js
 import to from 'await-to-done'
@@ -44,12 +46,25 @@ import to from 'await-to-done'
 const [err, data] = await to(/* promise function */)
 ```
 
-### Node.js require
+2. Node.js require
 
 ```js
 const to = require('await-to-done')
 
 const [err, data] = await to(/* promise function */)
+```
+
+### 传入多个Promise
+
+```ts
+import to from 'await-to-done'
+
+const bar = () => new Promise<boolean>()
+const foo = () => new Promise<string>()
+
+const [err, data] = await to(bar(), foo()) // data = [boolean, string]
+// 或者传入数组形式
+const [err, data] = await to([bar(), foo()]) // data = [boolean, string]
 ```
 
 ### 使用 unpkg CDN
