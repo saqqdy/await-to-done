@@ -83,7 +83,7 @@
 		"ts-jest": "^29.1.4",
 		"ts-morph": "^22.0.0",
 		"tsnd": "^1.1.0",
-		"typedoc": "^0.25.13",
+		"typedoc": "^0.26.5",
 		"typedoc-plugin-markdown": "^4.0.3",
 		"typescript": "^5.4.5",
 		"zx": "^8.1.2"
