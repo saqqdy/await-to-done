@@ -1,0 +1,1197 @@
+{
+	"schemaVersion": "2.0",
+	"id": 0,
+	"name": "index.md",
+	"variant": "project",
+	"kind": 1,
+	"flags": {},
+	"children": [
+		{
+			"id": 6,
+			"name": "AsyncResult",
+			"variant": "declaration",
+			"kind": 2097152,
+			"flags": {},
+			"comment": {
+				"summary": [
+					{
+						"kind": "text",
+						"text": "Async result type for async operations"
+					}
+				]
+			},
+			"sources": [
+				{
+					"fileName": "index.ts",
+					"line": 13,
+					"character": 12,
+					"url": "https://github.com/saqqdy/await-to-done/blob/f47816e3aa17af750e96d8b985d4fd335a191dae/src/index.ts#L13"
+				}
+			],
+			"typeParameters": [
+				{
+					"id": 7,
+					"name": "T",
+					"variant": "typeParam",
+					"kind": 131072,
+					"flags": {}
+				},
+				{
+					"id": 8,
+					"name": "E",
+					"variant": "typeParam",
+					"kind": 131072,
+					"flags": {},
+					"default": {
+						"type": "reference",
+						"target": {
+							"packageName": "typescript",
+							"packagePath": "lib/lib.es5.d.ts",
+							"qualifiedName": "Error"
+						},
+						"name": "Error",
+						"package": "typescript"
+					}
+				}
+			],
+			"type": {
+				"type": "reference",
+				"target": {
+					"packageName": "typescript",
+					"packagePath": "lib/lib.es5.d.ts",
+					"qualifiedName": "Promise"
+				},
+				"typeArguments": [
+					{
+						"type": "reference",
+						"target": 3,
+						"typeArguments": [
+							{
+								"type": "reference",
+								"target": 7,
+								"name": "T",
+								"package": "await-to-done",
+								"refersToTypeParameter": true
+							},
+							{
+								"type": "reference",
+								"target": 8,
+								"name": "E",
+								"package": "await-to-done",
+								"refersToTypeParameter": true
+							}
+						],
+						"name": "Result",
+						"package": "await-to-done"
+					}
+				],
+				"name": "Promise",
+				"package": "typescript"
+			}
+		},
+		{
+			"id": 1,
+			"name": "PromiseAll",
+			"variant": "declaration",
+			"kind": 2097152,
+			"flags": {},
+			"sources": [
+				{
+					"fileName": "index.ts",
+					"line": 1,
+					"character": 12,
+					"url": "https://github.com/saqqdy/await-to-done/blob/f47816e3aa17af750e96d8b985d4fd335a191dae/src/index.ts#L1"
+				}
+			],
+			"typeParameters": [
+				{
+					"id": 2,
+					"name": "P",
+					"variant": "typeParam",
+					"kind": 131072,
+					"flags": {},
+					"type": {
+						"type": "union",
+						"types": [
+							{
+								"type": "typeOperator",
+								"operator": "readonly",
+								"target": {
+									"type": "array",
+									"elementType": {
+										"type": "intrinsic",
+										"name": "unknown"
+									}
+								}
+							},
+							{
+								"type": "tuple"
+							}
+						]
+					}
+				}
+			],
+			"type": {
+				"type": "mapped",
+				"parameter": "K",
+				"parameterType": {
+					"type": "typeOperator",
+					"operator": "keyof",
+					"target": {
+						"type": "reference",
+						"target": 2,
+						"name": "P",
+						"package": "await-to-done",
+						"refersToTypeParameter": true
+					}
+				},
+				"templateType": {
+					"type": "reference",
+					"target": {
+						"packageName": "typescript",
+						"packagePath": "lib/lib.es5.d.ts",
+						"qualifiedName": "Promise"
+					},
+					"typeArguments": [
+						{
+							"type": "indexedAccess",
+							"indexType": {
+								"type": "reference",
+								"target": {
+									"packageName": "await-to-done",
+									"packagePath": "src/index.ts",
+									"qualifiedName": "K"
+								},
+								"name": "K",
+								"package": "await-to-done",
+								"refersToTypeParameter": true
+							},
+							"objectType": {
+								"type": "reference",
+								"target": 2,
+								"name": "P",
+								"package": "await-to-done",
+								"refersToTypeParameter": true
+							}
+						}
+					],
+					"name": "Promise",
+					"package": "typescript"
+				},
+				"readonlyModifier": "-"
+			}
+		},
+		{
+			"id": 3,
+			"name": "Result",
+			"variant": "declaration",
+			"kind": 2097152,
+			"flags": {},
+			"comment": {
+				"summary": [
+					{
+						"kind": "text",
+						"text": "Result type for async operations"
+					}
+				]
+			},
+			"sources": [
+				{
+					"fileName": "index.ts",
+					"line": 8,
+					"character": 12,
+					"url": "https://github.com/saqqdy/await-to-done/blob/f47816e3aa17af750e96d8b985d4fd335a191dae/src/index.ts#L8"
+				}
+			],
+			"typeParameters": [
+				{
+					"id": 4,
+					"name": "T",
+					"variant": "typeParam",
+					"kind": 131072,
+					"flags": {}
+				},
+				{
+					"id": 5,
+					"name": "E",
+					"variant": "typeParam",
+					"kind": 131072,
+					"flags": {},
+					"default": {
+						"type": "reference",
+						"target": {
+							"packageName": "typescript",
+							"packagePath": "lib/lib.es5.d.ts",
+							"qualifiedName": "Error"
+						},
+						"name": "Error",
+						"package": "typescript"
+					}
+				}
+			],
+			"type": {
+				"type": "union",
+				"types": [
+					{
+						"type": "tuple",
+						"elements": [
+							{
+								"type": "reference",
+								"target": 5,
+								"name": "E",
+								"package": "await-to-done",
+								"refersToTypeParameter": true
+							},
+							{
+								"type": "intrinsic",
+								"name": "undefined"
+							}
+						]
+					},
+					{
+						"type": "tuple",
+						"elements": [
+							{
+								"type": "literal",
+								"value": null
+							},
+							{
+								"type": "reference",
+								"target": 4,
+								"name": "T",
+								"package": "await-to-done",
+								"refersToTypeParameter": true
+							}
+						]
+					}
+				]
+			}
+		},
+		{
+			"id": 9,
+			"name": "default",
+			"variant": "declaration",
+			"kind": 64,
+			"flags": {},
+			"sources": [
+				{
+					"fileName": "index.ts",
+					"line": 34,
+					"character": 9,
+					"url": "https://github.com/saqqdy/await-to-done/blob/f47816e3aa17af750e96d8b985d4fd335a191dae/src/index.ts#L34"
+				},
+				{
+					"fileName": "index.ts",
+					"line": 35,
+					"character": 9,
+					"url": "https://github.com/saqqdy/await-to-done/blob/f47816e3aa17af750e96d8b985d4fd335a191dae/src/index.ts#L35"
+				},
+				{
+					"fileName": "index.ts",
+					"line": 38,
+					"character": 9,
+					"url": "https://github.com/saqqdy/await-to-done/blob/f47816e3aa17af750e96d8b985d4fd335a191dae/src/index.ts#L38"
+				},
+				{
+					"fileName": "index.ts",
+					"line": 42,
+					"character": 9,
+					"url": "https://github.com/saqqdy/await-to-done/blob/f47816e3aa17af750e96d8b985d4fd335a191dae/src/index.ts#L42"
+				}
+			],
+			"signatures": [
+				{
+					"id": 10,
+					"name": "default",
+					"variant": "signature",
+					"kind": 4096,
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Async await wrapper for easy error handling"
+							}
+						],
+						"blockTags": [
+							{
+								"tag": "@example",
+								"content": [
+									{
+										"kind": "code",
+										"text": "```ts\nconst bar = () => new Promise<boolean>((resolve, reject) => {})\nconst foo = () => new Promise<string>((resolve, reject) => {})\n;(async () => {\n\t  const [err, data] = await awaitToDone(bar())\n\t  const [err1, data1] = await awaitToDone(bar(), foo())\n\t  const [err2, data2] = await awaitToDone([bar(), foo()])\n})()\n```"
+									}
+								]
+							},
+							{
+								"tag": "@since",
+								"content": [
+									{
+										"kind": "text",
+										"text": "1.0.0"
+									}
+								]
+							},
+							{
+								"tag": "@author",
+								"content": [
+									{
+										"kind": "text",
+										"text": "saqqdy"
+									}
+								]
+							},
+							{
+								"tag": "@returns",
+								"content": [
+									{
+										"kind": "text",
+										"text": "- result"
+									}
+								]
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "index.ts",
+							"line": 34,
+							"character": 9,
+							"url": "https://github.com/saqqdy/await-to-done/blob/f47816e3aa17af750e96d8b985d4fd335a191dae/src/index.ts#L34"
+						}
+					],
+					"typeParameters": [
+						{
+							"id": 11,
+							"name": "T",
+							"variant": "typeParam",
+							"kind": 131072,
+							"flags": {}
+						},
+						{
+							"id": 12,
+							"name": "E",
+							"variant": "typeParam",
+							"kind": 131072,
+							"flags": {},
+							"default": {
+								"type": "reference",
+								"target": {
+									"packageName": "typescript",
+									"packagePath": "lib/lib.es5.d.ts",
+									"qualifiedName": "Error"
+								},
+								"name": "Error",
+								"package": "typescript"
+							}
+						}
+					],
+					"parameters": [
+						{
+							"id": 13,
+							"name": "promise",
+							"variant": "param",
+							"kind": 32768,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Promise"
+									}
+								]
+							},
+							"type": {
+								"type": "reference",
+								"target": {
+									"packageName": "typescript",
+									"packagePath": "lib/lib.es5.d.ts",
+									"qualifiedName": "Promise"
+								},
+								"typeArguments": [
+									{
+										"type": "reference",
+										"target": 11,
+										"name": "T",
+										"package": "await-to-done",
+										"refersToTypeParameter": true
+									}
+								],
+								"name": "Promise",
+								"package": "typescript"
+							}
+						}
+					],
+					"type": {
+						"type": "reference",
+						"target": {
+							"packageName": "typescript",
+							"packagePath": "lib/lib.es5.d.ts",
+							"qualifiedName": "Promise"
+						},
+						"typeArguments": [
+							{
+								"type": "reference",
+								"target": 3,
+								"typeArguments": [
+									{
+										"type": "reference",
+										"target": 11,
+										"name": "T",
+										"package": "await-to-done",
+										"refersToTypeParameter": true
+									},
+									{
+										"type": "reference",
+										"target": 12,
+										"name": "E",
+										"package": "await-to-done",
+										"refersToTypeParameter": true
+									}
+								],
+								"name": "Result",
+								"package": "await-to-done"
+							}
+						],
+						"name": "Promise",
+						"package": "typescript"
+					}
+				},
+				{
+					"id": 14,
+					"name": "default",
+					"variant": "signature",
+					"kind": 4096,
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Async await wrapper for easy error handling"
+							}
+						],
+						"blockTags": [
+							{
+								"tag": "@example",
+								"content": [
+									{
+										"kind": "code",
+										"text": "```ts\nconst bar = () => new Promise<boolean>((resolve, reject) => {})\nconst foo = () => new Promise<string>((resolve, reject) => {})\n;(async () => {\n\t  const [err, data] = await awaitToDone(bar())\n\t  const [err1, data1] = await awaitToDone(bar(), foo())\n\t  const [err2, data2] = await awaitToDone([bar(), foo()])\n})()\n```"
+									}
+								]
+							},
+							{
+								"tag": "@since",
+								"content": [
+									{
+										"kind": "text",
+										"text": "1.0.0"
+									}
+								]
+							},
+							{
+								"tag": "@author",
+								"content": [
+									{
+										"kind": "text",
+										"text": "saqqdy"
+									}
+								]
+							},
+							{
+								"tag": "@returns",
+								"content": [
+									{
+										"kind": "text",
+										"text": "- result"
+									}
+								]
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "index.ts",
+							"line": 35,
+							"character": 9,
+							"url": "https://github.com/saqqdy/await-to-done/blob/f47816e3aa17af750e96d8b985d4fd335a191dae/src/index.ts#L35"
+						}
+					],
+					"typeParameters": [
+						{
+							"id": 15,
+							"name": "P",
+							"variant": "typeParam",
+							"kind": 131072,
+							"flags": {},
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "tuple"
+									},
+									{
+										"type": "typeOperator",
+										"operator": "readonly",
+										"target": {
+											"type": "array",
+											"elementType": {
+												"type": "intrinsic",
+												"name": "unknown"
+											}
+										}
+									}
+								]
+							}
+						},
+						{
+							"id": 16,
+							"name": "E",
+							"variant": "typeParam",
+							"kind": 131072,
+							"flags": {},
+							"default": {
+								"type": "reference",
+								"target": {
+									"packageName": "typescript",
+									"packagePath": "lib/lib.es5.d.ts",
+									"qualifiedName": "Error"
+								},
+								"name": "Error",
+								"package": "typescript"
+							}
+						}
+					],
+					"parameters": [
+						{
+							"id": 17,
+							"name": "promise",
+							"variant": "param",
+							"kind": 32768,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Promise"
+									}
+								]
+							},
+							"type": {
+								"type": "reference",
+								"target": 1,
+								"typeArguments": [
+									{
+										"type": "reference",
+										"target": 15,
+										"name": "P",
+										"package": "await-to-done",
+										"refersToTypeParameter": true
+									}
+								],
+								"name": "PromiseAll",
+								"package": "await-to-done"
+							}
+						}
+					],
+					"type": {
+						"type": "reference",
+						"target": {
+							"packageName": "typescript",
+							"packagePath": "lib/lib.es5.d.ts",
+							"qualifiedName": "Promise"
+						},
+						"typeArguments": [
+							{
+								"type": "reference",
+								"target": 3,
+								"typeArguments": [
+									{
+										"type": "reference",
+										"target": 15,
+										"name": "P",
+										"package": "await-to-done",
+										"refersToTypeParameter": true
+									},
+									{
+										"type": "reference",
+										"target": 16,
+										"name": "E",
+										"package": "await-to-done",
+										"refersToTypeParameter": true
+									}
+								],
+								"name": "Result",
+								"package": "await-to-done"
+							}
+						],
+						"name": "Promise",
+						"package": "typescript"
+					}
+				},
+				{
+					"id": 18,
+					"name": "default",
+					"variant": "signature",
+					"kind": 4096,
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Async await wrapper for easy error handling"
+							}
+						],
+						"blockTags": [
+							{
+								"tag": "@example",
+								"content": [
+									{
+										"kind": "code",
+										"text": "```ts\nconst bar = () => new Promise<boolean>((resolve, reject) => {})\nconst foo = () => new Promise<string>((resolve, reject) => {})\n;(async () => {\n\t  const [err, data] = await awaitToDone(bar())\n\t  const [err1, data1] = await awaitToDone(bar(), foo())\n\t  const [err2, data2] = await awaitToDone([bar(), foo()])\n})()\n```"
+									}
+								]
+							},
+							{
+								"tag": "@since",
+								"content": [
+									{
+										"kind": "text",
+										"text": "1.0.0"
+									}
+								]
+							},
+							{
+								"tag": "@author",
+								"content": [
+									{
+										"kind": "text",
+										"text": "saqqdy"
+									}
+								]
+							},
+							{
+								"tag": "@returns",
+								"content": [
+									{
+										"kind": "text",
+										"text": "- result"
+									}
+								]
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "index.ts",
+							"line": 38,
+							"character": 9,
+							"url": "https://github.com/saqqdy/await-to-done/blob/f47816e3aa17af750e96d8b985d4fd335a191dae/src/index.ts#L38"
+						}
+					],
+					"typeParameters": [
+						{
+							"id": 19,
+							"name": "T",
+							"variant": "typeParam",
+							"kind": 131072,
+							"flags": {}
+						},
+						{
+							"id": 20,
+							"name": "P",
+							"variant": "typeParam",
+							"kind": 131072,
+							"flags": {},
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "tuple"
+									},
+									{
+										"type": "typeOperator",
+										"operator": "readonly",
+										"target": {
+											"type": "array",
+											"elementType": {
+												"type": "intrinsic",
+												"name": "unknown"
+											}
+										}
+									}
+								]
+							}
+						},
+						{
+							"id": 21,
+							"name": "E",
+							"variant": "typeParam",
+							"kind": 131072,
+							"flags": {},
+							"default": {
+								"type": "reference",
+								"target": {
+									"packageName": "typescript",
+									"packagePath": "lib/lib.es5.d.ts",
+									"qualifiedName": "Error"
+								},
+								"name": "Error",
+								"package": "typescript"
+							}
+						}
+					],
+					"parameters": [
+						{
+							"id": 22,
+							"name": "promise",
+							"variant": "param",
+							"kind": 32768,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Promise"
+									}
+								]
+							},
+							"type": {
+								"type": "reference",
+								"target": {
+									"packageName": "typescript",
+									"packagePath": "lib/lib.es5.d.ts",
+									"qualifiedName": "Promise"
+								},
+								"typeArguments": [
+									{
+										"type": "reference",
+										"target": 19,
+										"name": "T",
+										"package": "await-to-done",
+										"refersToTypeParameter": true
+									}
+								],
+								"name": "Promise",
+								"package": "typescript"
+							}
+						},
+						{
+							"id": 23,
+							"name": "promises",
+							"variant": "param",
+							"kind": 32768,
+							"flags": {
+								"isRest": true
+							},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Promise rest params"
+									}
+								]
+							},
+							"type": {
+								"type": "reference",
+								"target": 1,
+								"typeArguments": [
+									{
+										"type": "reference",
+										"target": 20,
+										"name": "P",
+										"package": "await-to-done",
+										"refersToTypeParameter": true
+									}
+								],
+								"name": "PromiseAll",
+								"package": "await-to-done"
+							}
+						}
+					],
+					"type": {
+						"type": "reference",
+						"target": {
+							"packageName": "typescript",
+							"packagePath": "lib/lib.es5.d.ts",
+							"qualifiedName": "Promise"
+						},
+						"typeArguments": [
+							{
+								"type": "reference",
+								"target": 3,
+								"typeArguments": [
+									{
+										"type": "tuple",
+										"elements": [
+											{
+												"type": "reference",
+												"target": 19,
+												"name": "T",
+												"package": "await-to-done",
+												"refersToTypeParameter": true
+											},
+											{
+												"type": "rest",
+												"elementType": {
+													"type": "array",
+													"elementType": {
+														"type": "reference",
+														"target": 20,
+														"name": "P",
+														"package": "await-to-done",
+														"refersToTypeParameter": true
+													}
+												}
+											}
+										]
+									},
+									{
+										"type": "reference",
+										"target": 21,
+										"name": "E",
+										"package": "await-to-done",
+										"refersToTypeParameter": true
+									}
+								],
+								"name": "Result",
+								"package": "await-to-done"
+							}
+						],
+						"name": "Promise",
+						"package": "typescript"
+					}
+				}
+			]
+		}
+	],
+	"groups": [
+		{
+			"title": "Type Aliases",
+			"children": [
+				6,
+				1,
+				3
+			]
+		},
+		{
+			"title": "Functions",
+			"children": [
+				9
+			]
+		}
+	],
+	"packageName": "await-to-done",
+	"packageVersion": "1.2.0",
+	"readme": [
+		{
+			"kind": "text",
+			"text": "<div style=\"text-align: center;\" align=\"center\">\n\n# await-to-done\n\n**Async await wrapper for easy error handling**\n\nZero dependencies • ES5 compatible • TypeScript ready\n\n[![npm version][npm-image]][npm-url]\n[![npm downloads][download-image]][download-url]\n[![gzip][gzip-image]][gzip-url]\n[![License][license-image]][license-url]\n\n[![Sonar][sonar-image]][sonar-url]\n\n</div>\n\n## Why?\n\nStop writing try-catch blocks everywhere. "
+		},
+		{
+			"kind": "code",
+			"text": "`await-to-done`"
+		},
+		{
+			"kind": "text",
+			"text": " wraps your promises and returns a tuple "
+		},
+		{
+			"kind": "code",
+			"text": "`[error, data]`"
+		},
+		{
+			"kind": "text",
+			"text": " for elegant error handling.\n\n"
+		},
+		{
+			"kind": "code",
+			"text": "```ts\n// Before 😫\ntry {\n  const data = await fetchData()\n  // handle data\n} catch (error) {\n  // handle error\n}\n\n// After 😍\nimport to from 'await-to-done'\n\nconst [error, data] = await to(fetchData())\nif (error) {\n  // handle error\n}\n// handle data\n```"
+		},
+		{
+			"kind": "text",
+			"text": "\n\n## Install\n\n"
+		},
+		{
+			"kind": "code",
+			"text": "```bash\npnpm add await-to-done\n# or\nnpm install await-to-done\n```"
+		},
+		{
+			"kind": "text",
+			"text": "\n\n## Usage\n\n### Single Promise\n\n"
+		},
+		{
+			"kind": "code",
+			"text": "```ts\nimport to from 'await-to-done'\n\nconst [error, user] = await to(fetchUser(id))\n\nif (error) {\n  console.error('Failed to fetch user:', error)\n  return\n}\n\nconsole.log('User:', user)\n```"
+		},
+		{
+			"kind": "text",
+			"text": "\n\n### Multiple Promises\n\n"
+		},
+		{
+			"kind": "code",
+			"text": "```ts\nimport to from 'await-to-done'\n\n// Pass multiple promises as arguments\nconst [error, [user, posts]] = await to(fetchUser(id), fetchPosts(id))\n\n// Or pass an array\nconst [error, results] = await to([fetchUser(id), fetchPosts(id)])\n```"
+		},
+		{
+			"kind": "text",
+			"text": "\n\n### Custom Error Type\n\n"
+		},
+		{
+			"kind": "code",
+			"text": "```ts\nimport to from 'await-to-done'\n\ninterface ApiError {\n  code: number\n  message: string\n}\n\nconst [error, data] = await to<string, ApiError>(fetchData())\nif (error) {\n  console.log(error.code, error.message)\n}\n```"
+		},
+		{
+			"kind": "text",
+			"text": "\n\n### Browser / CDN\n\n"
+		},
+		{
+			"kind": "code",
+			"text": "```html\n<script src=\"https://unpkg.com/await-to-done/dist/index.umd.js\"></script>\n<script>\n  const [error, data] = await awaitToDone(fetch('/api/data'))\n</script>\n```"
+		},
+		{
+			"kind": "text",
+			"text": "\n\n## API\n\n### "
+		},
+		{
+			"kind": "code",
+			"text": "`to<T, E>(promise)`"
+		},
+		{
+			"kind": "text",
+			"text": "\n\n| Parameter   | Type                                   | Description             |\n| ----------- | -------------------------------------- | ----------------------- |\n| "
+		},
+		{
+			"kind": "code",
+			"text": "`promise`"
+		},
+		{
+			"kind": "text",
+			"text": "   | "
+		},
+		{
+			"kind": "code",
+			"text": "`Promise<T>`"
+		},
+		{
+			"kind": "text",
+			"text": "                           | A promise to wrap       |\n| **Returns** | "
+		},
+		{
+			"kind": "code",
+			"text": "`Promise<[E, undefined] \\| [null, T]>`"
+		},
+		{
+			"kind": "text",
+			"text": " | Tuple of error and data |\n\n### "
+		},
+		{
+			"kind": "code",
+			"text": "`to<P>(promises)`"
+		},
+		{
+			"kind": "text",
+			"text": "\n\n| Parameter   | Type                                       | Description                 |\n| ----------- | ------------------------------------------ | --------------------------- |\n| "
+		},
+		{
+			"kind": "code",
+			"text": "`promises`"
+		},
+		{
+			"kind": "text",
+			"text": "  | "
+		},
+		{
+			"kind": "code",
+			"text": "`Promise[]`"
+		},
+		{
+			"kind": "text",
+			"text": "                                | Array of promises           |\n| **Returns** | "
+		},
+		{
+			"kind": "code",
+			"text": "`Promise<[Error, undefined] \\| [null, P]>`"
+		},
+		{
+			"kind": "text",
+			"text": " | Tuple with array of results |\n\n## Types\n\n"
+		},
+		{
+			"kind": "code",
+			"text": "```ts\n// Result tuple type\ntype Result<T, E = Error> = [E, undefined] | [null, T]\n\n// Async result type\ntype AsyncResult<T, E = Error> = Promise<Result<T, E>>\n```"
+		},
+		{
+			"kind": "text",
+			"text": "\n\n## Bundle Size\n\n| File            | Size (min + gzip) |\n| --------------- | ----------------- |\n| "
+		},
+		{
+			"kind": "code",
+			"text": "`index.min.mjs`"
+		},
+		{
+			"kind": "text",
+			"text": " | ~300 B            |\n| "
+		},
+		{
+			"kind": "code",
+			"text": "`index.umd.js`"
+		},
+		{
+			"kind": "text",
+			"text": "  | ~400 B            |\n\n## Comparison\n\n| Feature           | await-to-done | await-to-js |\n| ----------------- | ------------- | ----------- |\n| Dependencies      | 0             | 0           |\n| TypeScript types  | ✅ Built-in   | ❌ Separate |\n| Multiple promises | ✅            | ❌          |\n| Array support     | ✅            | ❌          |\n| ES5 compatible    | ✅            | ✅          |\n| Size              | ~300 B        | ~200 B      |\n\n## License\n\n[MIT]("
+		},
+		{
+			"kind": "relative-link",
+			"text": "LICENSE",
+			"target": 2
+		},
+		{
+			"kind": "text",
+			"text": ")\n\n[npm-image]: https://img.shields.io/npm/v/await-to-done.svg\n[npm-url]: https://npmjs.org/package/await-to-done\n[download-image]: https://img.shields.io/npm/dm/await-to-done.svg\n[download-url]: https://npmjs.org/package/await-to-done\n[gzip-image]: http://img.badgesize.io/https://unpkg.com/await-to-done/dist/index.global.prod.js?compression=gzip&label=gzip%20size:%20JS\n[gzip-url]: http://img.badgesize.io/https://unpkg.com/await-to-done/dist/index.global.prod.js?compression=gzip&label=gzip%20size:%20JS\n[license-image]: https://img.shields.io/badge/License-MIT-blue.svg\n[license-url]: "
+		},
+		{
+			"kind": "relative-link",
+			"text": "LICENSE",
+			"target": 2
+		},
+		{
+			"kind": "text",
+			"text": "\n[sonar-image]: https://sonarcloud.io/api/project_badges/quality_gate?project=saqqdy_await-to-done\n[sonar-url]: https://sonarcloud.io/dashboard?id=saqqdy_await-to-done"
+		}
+	],
+	"symbolIdMap": {
+		"0": {
+			"packageName": "await-to-done",
+			"packagePath": "src/index.ts",
+			"qualifiedName": ""
+		},
+		"1": {
+			"packageName": "await-to-done",
+			"packagePath": "src/index.ts",
+			"qualifiedName": "PromiseAll"
+		},
+		"2": {
+			"packageName": "await-to-done",
+			"packagePath": "src/index.ts",
+			"qualifiedName": "P"
+		},
+		"3": {
+			"packageName": "await-to-done",
+			"packagePath": "src/index.ts",
+			"qualifiedName": "Result"
+		},
+		"4": {
+			"packageName": "await-to-done",
+			"packagePath": "src/index.ts",
+			"qualifiedName": "T"
+		},
+		"5": {
+			"packageName": "await-to-done",
+			"packagePath": "src/index.ts",
+			"qualifiedName": "E"
+		},
+		"6": {
+			"packageName": "await-to-done",
+			"packagePath": "src/index.ts",
+			"qualifiedName": "AsyncResult"
+		},
+		"7": {
+			"packageName": "await-to-done",
+			"packagePath": "src/index.ts",
+			"qualifiedName": "T"
+		},
+		"8": {
+			"packageName": "await-to-done",
+			"packagePath": "src/index.ts",
+			"qualifiedName": "E"
+		},
+		"9": {
+			"packageName": "await-to-done",
+			"packagePath": "src/index.ts",
+			"qualifiedName": "awaitToDone"
+		},
+		"10": {
+			"packageName": "await-to-done",
+			"packagePath": "src/index.ts",
+			"qualifiedName": "awaitToDone"
+		},
+		"11": {
+			"packageName": "await-to-done",
+			"packagePath": "src/index.ts",
+			"qualifiedName": "T"
+		},
+		"12": {
+			"packageName": "await-to-done",
+			"packagePath": "src/index.ts",
+			"qualifiedName": "E"
+		},
+		"13": {
+			"packageName": "await-to-done",
+			"packagePath": "src/index.ts",
+			"qualifiedName": "promise"
+		},
+		"14": {
+			"packageName": "await-to-done",
+			"packagePath": "src/index.ts",
+			"qualifiedName": "awaitToDone"
+		},
+		"15": {
+			"packageName": "await-to-done",
+			"packagePath": "src/index.ts",
+			"qualifiedName": "P"
+		},
+		"16": {
+			"packageName": "await-to-done",
+			"packagePath": "src/index.ts",
+			"qualifiedName": "E"
+		},
+		"17": {
+			"packageName": "await-to-done",
+			"packagePath": "src/index.ts",
+			"qualifiedName": "promise"
+		},
+		"18": {
+			"packageName": "await-to-done",
+			"packagePath": "src/index.ts",
+			"qualifiedName": "awaitToDone"
+		},
+		"19": {
+			"packageName": "await-to-done",
+			"packagePath": "src/index.ts",
+			"qualifiedName": "T"
+		},
+		"20": {
+			"packageName": "await-to-done",
+			"packagePath": "src/index.ts",
+			"qualifiedName": "P"
+		},
+		"21": {
+			"packageName": "await-to-done",
+			"packagePath": "src/index.ts",
+			"qualifiedName": "E"
+		},
+		"22": {
+			"packageName": "await-to-done",
+			"packagePath": "src/index.ts",
+			"qualifiedName": "promise"
+		},
+		"23": {
+			"packageName": "await-to-done",
+			"packagePath": "src/index.ts",
+			"qualifiedName": "promises"
+		}
+	},
+	"files": {
+		"entries": {
+			"1": "src/index.ts",
+			"2": "LICENSE",
+			"3": "README.md",
+			"4": ""
+		},
+		"reflections": {
+			"1": 0,
+			"3": 0,
+			"4": 0
+		}
+	}
+}
