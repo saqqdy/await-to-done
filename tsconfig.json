@@ -1,9 +1,9 @@
 {
 	"compilerOptions": {
-		"target": "ES5",
+		"target": "ES2020",
 		"module": "ESNext",
 		"moduleResolution": "bundler",
-		"lib": ["ES5", "DOM", "DOM.Iterable"],
+		"lib": ["ES2020", "DOM", "DOM.Iterable"],
 		"strict": true,
 		"noImplicitOverride": true,
 		"noUnusedLocals": true,
@@ -17,5 +17,5 @@
 		}
 	},
 	"include": ["src/**/*.ts"],
-	"exclude": ["**/tests", "temp", "node_modules"]
+	"exclude": ["tests", "temp", "node_modules"]
 }

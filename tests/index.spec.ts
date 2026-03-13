@@ -132,18 +132,21 @@ describe('awaitToDone', () => {
 
 	describe('edge cases', () => {
 		it('should handle rejected promise with non-Error value', async () => {
+			// eslint-disable-next-line prefer-promise-reject-errors
 			const [err, data] = await awaitToDone(Promise.reject('string error'))
 			expect(err).toBe('string error')
 			expect(data).toBeUndefined()
 		})
 
 		it('should handle rejected promise with number value', async () => {
-			const [err, data] = await awaitToDone(Promise.reject(404))
-			expect(err).toBe(404)
+			const [err, data] = await awaitToDone(Promise.reject(new Error('404')))
+			expect(err).toBeInstanceOf(Error)
+			expect(err?.message).toBe('404')
 			expect(data).toBeUndefined()
 		})
 
 		it('should handle rejected promise with null', async () => {
+			// eslint-disable-next-line prefer-promise-reject-errors
 			const [err, data] = await awaitToDone(Promise.reject(null))
 			expect(err).toBeNull()
 			expect(data).toBeUndefined()
