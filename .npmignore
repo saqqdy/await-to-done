@@ -1,0 +1,34 @@
+# Source files
+src/
+build/
+scripts/
+
+# Config files
+.github/
+.vscode/
+*.config.js
+*.config.ts
+tsconfig.json
+babel.config.js
+vitest.config.ts
+eslint.config.js
+api-extractor.json
+
+# Documentation
+docs/
+*.md
+!README.md
+!LICENSE
+!CHANGELOG.md
+
+# Test files
+coverage/
+**/tests/
+*.test.ts
+*.spec.ts
+
+# Development files
+.node_modules/
+node_modules/
+*.log
+.DS_Store

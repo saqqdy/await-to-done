@@ -4,15 +4,10 @@ module.exports = {
 			'@babel/env',
 			{
 				targets: {
-					// node: '12.20',
-					browsers: [
-						'> 1%',
-						'last 2 versions',
-						'not ie < 11',
-						'not ie_mob < 11',
-						'not op_mini all'
-					]
+					browsers: ['> 0.5%', 'last 2 versions', 'not dead']
 				},
+				// Ensure ES5 output
+				forceAllTransforms: true,
 				exclude: ['transform-regenerator']
 			}
 		],

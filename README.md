@@ -2,13 +2,12 @@
 
 # await-to-done
 
-Async await wrapper for easy error handling
+**Async await wrapper for easy error handling**
 
-[![NPM version][npm-image]][npm-url]
-[![Codacy Badge][codacy-image]][codacy-url]
-![typescript][typescript-url]
-[![Test coverage][codecov-image]][codecov-url]
-[![npm download][download-image]][download-url]
+Zero dependencies • ES5 compatible • TypeScript ready
+
+[![npm version][npm-image]][npm-url]
+[![npm downloads][download-image]][download-url]
 [![gzip][gzip-image]][gzip-url]
 [![License][license-image]][license-url]
 
@@ -16,42 +15,52 @@ Async await wrapper for easy error handling
 
 </div>
 
-<div style="text-align: center; margin-bottom: 20px;" align="center">
+## Why?
 
-### **[Documentation](https://www.saqqdy.com/await-to-done)** • **[Change Log](./CHANGELOG.md)**
+Stop writing try-catch blocks everywhere. `await-to-done` wraps your promises and returns a tuple `[error, data]` for elegant error handling.
 
-**Read this in other languages: English | [简体中文](./README-zh_CN.md)**
+```ts
+// Before 😫
+try {
+  const data = await fetchData()
+  // handle data
+} catch (error) {
+  // handle error
+}
 
-</div>
+// After 😍
+import to from 'await-to-done'
 
-## Installing
+const [error, data] = await to(fetchData())
+if (error) {
+  // handle error
+}
+// handle data
+```
+
+## Install
 
 ```bash
-# use pnpm
-$ pnpm install await-to-done
-
-# use npm
-$ npm install await-to-done --save
+pnpm add await-to-done
+# or
+npm install await-to-done
 ```
 
 ## Usage
 
-### Simple Usage
-
-1. ES6 module
+### Single Promise
 
 ```ts
 import to from 'await-to-done'
 
-const [err, data] = await to(/* promise function */)
-```
+const [error, user] = await to(fetchUser(id))
 
-2. Node.js require
+if (error) {
+  console.error('Failed to fetch user:', error)
+  return
+}
 
-```ts
-const to = require('await-to-done')
-
-const [err, data] = await to(/* promise function */)
+console.log('User:', user)
 ```
 
 ### Multiple Promises
@@ -59,42 +68,89 @@ const [err, data] = await to(/* promise function */)
 ```ts
 import to from 'await-to-done'
 
-const bar = () => new Promise<boolean>()
-const foo = () => new Promise<string>()
+// Pass multiple promises as arguments
+const [error, [user, posts]] = await to(fetchUser(id), fetchPosts(id))
 
-const [err, data] = await to(bar(), foo()) // data = [boolean, string]
-// or pass in an Array
-const [err, data] = await to([bar(), foo()]) // data = [boolean, string]
+// Or pass an array
+const [error, results] = await to([fetchUser(id), fetchPosts(id)])
 ```
 
-### Using unpkg CDN
+### Custom Error Type
+
+```ts
+import to from 'await-to-done'
+
+interface ApiError {
+  code: number
+  message: string
+}
+
+const [error, data] = await to<string, ApiError>(fetchData())
+if (error) {
+  console.log(error.code, error.message)
+}
+```
+
+### Browser / CDN
 
 ```html
-<script src="https://unpkg.com/await-to-done@latest/dist/index.global.prod.js"></script>
+<script src="https://unpkg.com/await-to-done/dist/index.umd.js"></script>
 <script>
-  ;(async () => {
-    const to = window.awaitToDone
-    const [err, data] = await to(/* promise function */)
-  })()
+  const [error, data] = await awaitToDone(fetch('/api/data'))
 </script>
 ```
 
-## Support & Issues
+## API
 
-Please open an issue [here](https://github.com/saqqdy/await-to-done/issues).
+### `to<T, E>(promise)`
+
+| Parameter   | Type                                   | Description             |
+| ----------- | -------------------------------------- | ----------------------- |
+| `promise`   | `Promise<T>`                           | A promise to wrap       |
+| **Returns** | `Promise<[E, undefined] \| [null, T]>` | Tuple of error and data |
+
+### `to<P>(promises)`
+
+| Parameter   | Type                                       | Description                 |
+| ----------- | ------------------------------------------ | --------------------------- |
+| `promises`  | `Promise[]`                                | Array of promises           |
+| **Returns** | `Promise<[Error, undefined] \| [null, P]>` | Tuple with array of results |
+
+## Types
+
+```ts
+// Result tuple type
+type Result<T, E = Error> = [E, undefined] | [null, T]
+
+// Async result type
+type AsyncResult<T, E = Error> = Promise<Result<T, E>>
+```
+
+## Bundle Size
+
+| File            | Size (min + gzip) |
+| --------------- | ----------------- |
+| `index.min.mjs` | ~300 B            |
+| `index.umd.js`  | ~400 B            |
+
+## Comparison
+
+| Feature           | await-to-done | await-to-js |
+| ----------------- | ------------- | ----------- |
+| Dependencies      | 0             | 0           |
+| TypeScript types  | ✅ Built-in   | ❌ Separate |
+| Multiple promises | ✅            | ❌          |
+| Array support     | ✅            | ❌          |
+| ES5 compatible    | ✅            | ✅          |
+| Size              | ~300 B        | ~200 B      |
 
 ## License
 
 [MIT](LICENSE)
 
-[npm-image]: https://img.shields.io/npm/v/await-to-done.svg?style=flat-square
+[npm-image]: https://img.shields.io/npm/v/await-to-done.svg
 [npm-url]: https://npmjs.org/package/await-to-done
-[codacy-image]: https://app.codacy.com/project/badge/Grade/f70d4880e4ad4f40aa970eb9ee9d0696
-[codacy-url]: https://www.codacy.com/gh/saqqdy/await-to-done/dashboard?utm_source=github.com&utm_medium=referral&utm_content=saqqdy/await-to-done&utm_campaign=Badge_Grade
-[typescript-url]: https://badgen.net/badge/icon/typescript?icon=typescript&label
-[codecov-image]: https://img.shields.io/codecov/c/github/saqqdy/await-to-done.svg?style=flat-square
-[codecov-url]: https://codecov.io/github/saqqdy/await-to-done?branch=master
-[download-image]: https://img.shields.io/npm/dm/await-to-done.svg?style=flat-square
+[download-image]: https://img.shields.io/npm/dm/await-to-done.svg
 [download-url]: https://npmjs.org/package/await-to-done
 [gzip-image]: http://img.badgesize.io/https://unpkg.com/await-to-done/dist/index.global.prod.js?compression=gzip&label=gzip%20size:%20JS
 [gzip-url]: http://img.badgesize.io/https://unpkg.com/await-to-done/dist/index.global.prod.js?compression=gzip&label=gzip%20size:%20JS

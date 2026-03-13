@@ -1,24 +1,21 @@
 {
 	"compilerOptions": {
-		"allowJs": true,
-		"target": "es5",
-		"moduleResolution": "node",
-		"lib": ["es6", "dom", "dom.iterable", "esnext"],
-		"noLib": false,
-		"sourceMap": false,
-		"resolveJsonModule": true,
+		"target": "ES5",
 		"module": "ESNext",
+		"moduleResolution": "bundler",
+		"lib": ["ES5", "DOM", "DOM.Iterable"],
 		"strict": true,
 		"noImplicitOverride": true,
 		"noUnusedLocals": true,
+		"noUnusedParameters": true,
 		"esModuleInterop": true,
-		"emitDecoratorMetadata": true,
-		"experimentalDecorators": true,
 		"allowSyntheticDefaultImports": true,
-		"downlevelIteration": true,
+		"resolveJsonModule": true,
+		"skipLibCheck": true,
 		"paths": {
 			"#lib/*": ["./src/*"]
 		}
 	},
-	"exclude": ["**/__tests__", "temp", "*_bak"]
+	"include": ["src/**/*.ts"],
+	"exclude": ["**/tests", "temp", "node_modules"]
 }

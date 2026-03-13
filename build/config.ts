@@ -1,10 +1,11 @@
 import { dirname, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
-import chalk from 'chalk'
-import pkg from '../package.json' assert { type: 'json' }
+import { readFileSync } from 'node:fs'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = dirname(__filename)
+
+const pkg = JSON.parse(readFileSync(resolve(__dirname, '../package.json'), 'utf-8'))
 
 export const banner =
 	'/*!\n' +
@@ -22,36 +23,9 @@ export const banner =
 	' * Released under the MIT License.\n' +
 	' */'
 
-export const externals = {}
-
-export const version = pkg.version
-
-export const extensions = [
-	'.js',
-	'.mjs',
-	'.cjs',
-	'.jsx',
-	'.ts',
-	'.mts',
-	'.cts',
-	'.tsx',
-	'.es6',
-	'.es',
-	'.json',
-	'.less',
-	'.css'
-]
+export const extensions = ['.js', '.mjs', '.cjs', '.ts', '.tsx', '.json']
 
 export const alias = {
 	'@': resolve(__dirname, '..', 'src'),
 	'await-to-done': resolve(__dirname, '..')
 }
-
-export const reporter = (opt: any, outputOptions: any, info: any) =>
-	`${chalk.cyan(
-		chalk.bold(
-			outputOptions.file ? `${outputOptions.file.split('src/').pop()}` : info.fileName || ''
-		)
-	)}: bundle size ${chalk.yellow(info.bundleSize)} -> minified ${chalk.green(
-		(info.minSize && `${info.minSize}`) || ''
-	)}`
